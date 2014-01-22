@@ -86,8 +86,11 @@ public:
 
 private:
     static SkTypefaceCache& Get();
-
-    void purge(int count);
+    void add(SkTypeface*, SkTypeface::Style requested, bool strong = true);
+    SkTypeface* findByID(SkFontID findID) const;
+    SkTypeface* findByProcAndRef(FindProc proc, void* ctx) const;
+    void purge(int count, bool force);
+    void purgeAll();
 
     struct Rec {
         SkTypeface*         fFace;

@@ -106,7 +106,12 @@ public:
                                 SkTArray<FontIdentity>*) {
         return false;
     }
-    typedef SkRefCnt INHERITED;
+
+    /**
+     * Clear the singleton so that a new SkFontConfigInterface
+     * can be created which will reload default fonts.
+     */
+    static void ClearSingletonInterface();
 };
 
 #endif
