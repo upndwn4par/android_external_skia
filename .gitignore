@@ -8,3 +8,5 @@ out/
 third_party/externals/
 xcodebuild/
 TAGS
+*~
+.*
